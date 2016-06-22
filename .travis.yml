@@ -16,8 +16,6 @@ install:
   - cargo install bindgen
 
 script:
-  - find $TRAVIS_BUILD_DIR/lib/osvr-core/inc/osvr -name *.h \
-    | xargs bindgen
   - cargo build
 
 post_script:

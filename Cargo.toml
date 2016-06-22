@@ -13,3 +13,6 @@ name = "osvr_core"
 path = "src/lib.rs"
 
 [dependencies]
+
+[build_dependencies]
+walkdir = "0.1"
