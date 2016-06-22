@@ -1,0 +1,32 @@
+language: rust
+sudo: false
+rust:
+  - stable
+
+cache:
+  directories:
+    - $HOME/.cargo
+    - $TRAVIS_BUILD_DIR/lib/osvr-core
+    - $TRAVIS_BUILD_DIR/target
+
+pre_install:
+  - git submodule update --init --recursive
+
+install:
+  - cargo install bindgen
+
+script:
+  - find $TRAVIS_BUILD_DIR/lib/osvr-core/inc/osvr -name *.h \
+    | xargs bindgen
+  - cargo build
+
+post_script:
+  - cargo test
+
+deploy:
+  - provider: script
+  - skip_cleanup: true
+  - script: cargo publish --token $CARGO_TOKEN
+  - on:
+    - tags: true
+

@@ -1,0 +1,15 @@
+[package]
+name = "osvr-core"
+version = "0.1.0"
+description = "Rust bindings to the osvr-core c library."
+authors = [ "pcummuskey <pcummuskey@bravurasolutions.com>" ]
+repository = "git@github.com:aetheric/osvr-core-rs.git"
+readme = "README.adoc"
+license = "MIT"
+keywords = [ "OSVR", "porting" ]
+
+[lib]
+name = "osvr_core"
+path = "src/lib.rs"
+
+[dependencies]

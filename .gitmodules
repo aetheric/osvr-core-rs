@@ -1,0 +1,5 @@
+[submodule "osvr-core"]
+	path = lib/osvr-core
+	fetchRecurseSubmodules = true
+	url = git@github.com:OSVR/OSVR-Core.git
+	branch = v0.6
